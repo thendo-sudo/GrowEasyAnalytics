@@ -1,10 +1,14 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Landing from './landing';
 import TechStackForm from './tech-stack-form';
 
 export default function App() {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">GrowEasy Analytics</h1>
-      <TechStackForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/form" element={<TechStackForm />} />
+      </Routes>
+    </Router>
   );
 }
